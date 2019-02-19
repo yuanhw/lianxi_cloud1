@@ -11,10 +11,10 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
  */
 @SpringBootApplication
 @EnableDiscoveryClient
-public class UserApplication {
+public class UserAuthApplication {
     public static void main(String[] args) {
-        System.out.println("user begin...");
-        SpringApplication.run(UserApplication.class, args);
-        System.out.println("user end...");
+        System.out.println("user auth begin...");
+        SpringApplication.run(UserAuthApplication.class, args);
+        System.out.println("user auth end...");
     }
 }
