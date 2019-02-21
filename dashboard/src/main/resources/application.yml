@@ -1,0 +1,18 @@
+server:
+  port: 8081
+
+eureka:
+  client:
+    healthcheck:
+      enabled: true
+    service-url:
+      defaultZone: http://admin:123456@peer1:8001/eureka,http://admin:123456@peer2:8002/eureka
+  instance:
+    prefer-ip-address: true
+
+spring:
+  application:
+    name: turbine
+turbine:
+  app-config: movie-service,movie-service0
+  cluster-name-expression: "'default'"

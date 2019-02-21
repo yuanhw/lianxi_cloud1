@@ -28,7 +28,7 @@ public class MovieController {
     @Autowired
     private UserFeignClient userFeignClient;
 
-    @HystrixCommand(fallbackMethod = "findByIdFallback")
+    //@HystrixCommand(fallbackMethod = "findByIdFallback")
     @GetMapping("/user/{id}")
     public User findById(@PathVariable Long id) {
         return this.userFeignClient.findById(id);
