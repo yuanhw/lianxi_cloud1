@@ -15,14 +15,15 @@ import java.io.IOException;
 public class Main {
     public static void main(String[] args) {
         BaseTest.execTest(() -> {
-            String url = "http://localhost:10011/movie/user/3";
-            CloseableHttpClient httpClient = HttpClientBuilder.create().build();
-            HttpGet httpGet = new HttpGet(url);
-            try {
-                httpClient.execute(httpGet);
-            } catch (IOException e) {
-                System.out.println(e.getMessage());
-            }
-        }, 30);
+            // 获取堆内存的初始值和最大值
+            // 物理内存的1/64
+            long l = Runtime.getRuntime().totalMemory();// 字节
+            // 物理内存的1/4
+            long m = Runtime.getRuntime().maxMemory();
+            // totalMemory:121MB
+            System.out.println("l=" + l / 1024 / 1024 + "MB");
+            // maxMemory:1787MB
+            System.out.println("Max=" + m / 1024 / 1024 + "MB");
+        }, 1);
     }
 }

@@ -1,20 +1,20 @@
-package lianxi.cloud.dashboard;
+package lianxi.cloud.fileupload;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.cloud.netflix.turbine.stream.EnableTurbineStream;
+import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 
 /**
  * @author: WangYuanHang
  * @Description:
- * @date: 2019/2/21 13:44
+ * @date: 2019/2/22 9:12
  */
 @SpringBootApplication
-@EnableTurbineStream
+@EnableEurekaClient
 public class Application {
     public static void main(String[] args) {
-        System.out.println("dashboard start...");
+        System.out.println("file upload start...");
         SpringApplication.run(Application.class, args);
-        System.out.println("dashboard end...");
+        System.out.println("file upload end...");
     }
 }

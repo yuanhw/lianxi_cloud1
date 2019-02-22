@@ -1,7 +1,5 @@
 package lianxi.cloud.movie.controller;
 
-import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
-import com.netflix.hystrix.contrib.javanica.annotation.HystrixProperty;
 import lianxi.cloud.movie.entity.User;
 import lianxi.cloud.movie.feign.UserFeignClient;
 import org.springframework.beans.factory.annotation.Autowired;
