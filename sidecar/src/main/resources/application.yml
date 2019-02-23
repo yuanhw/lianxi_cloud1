@@ -1,0 +1,27 @@
+server:
+  port: 8090
+spring:
+  application:
+    name: gatewal-sidecar
+  http:
+    multipart:
+      max-file-size: 20MB
+      max-request-size: 21MB
+eureka:
+  client:
+    healthcheck:
+      enabled: true
+    service-url:
+      defaultZone: http://admin:123456@peer1:8001/eureka,http://admin:123456@peer2:8002/eureka
+  instance:
+    prefer-ip-address: true
+hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds: 60000
+ribbon:
+  ConnectionTimeout: 3000
+  ReadTimeout: 60000
+logging:
+  level:
+    com.netflix: debug
+sidecar:
+  port: 9010
+  health-uri: http://localhost:9010/health.json

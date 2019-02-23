@@ -32,6 +32,11 @@ public class MovieController {
         return this.userFeignClient.findById(id);
     }
 
+    @GetMapping("/sidecar")
+    public String testSidecar() {
+       return this.restTemplate.getForObject("http://gatewal-sidecar", String.class);
+    }
+
     public User findByIdFallback(Long id) {
         User user = new User();
         user.setId(0L);
