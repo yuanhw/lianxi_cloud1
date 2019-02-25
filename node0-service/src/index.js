@@ -3,6 +3,8 @@ let url = require('url')
 let path = require('path')
 
 let server = http.createServer(function (req, res) {
+    console.log('\nreq:\n')
+    console.log(req.url)
     let paramName = url.parse(req.url).pathname;
     res.writeHead(200, {"Content-Type": "application/json;charset=utf-8"})
     if (paramName === '/') {

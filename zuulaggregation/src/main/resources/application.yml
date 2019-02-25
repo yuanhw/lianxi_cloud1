@@ -1,0 +1,21 @@
+server:
+  port: 8091
+spring:
+  application:
+    name: aggre-zuul
+
+eureka:
+  client:
+    healthcheck:
+      enabled: true
+    service-url:
+      defaultZone: http://admin:123456@peer1:8001/eureka,http://admin:123456@peer2:8002/eureka
+  instance:
+    prefer-ip-address: true
+
+ribbon:
+  ConnectionTimeout: 3000
+  ReadTimeout: 60000
+logging:
+  level:
+    com.netflix: debug
